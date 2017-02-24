@@ -1,0 +1,144 @@
+2017-02-21 23:15:22 [main] INFO :: Stocks.txt file has been loaded successfully
+2017-02-21 23:15:23 [main] ERROR:: Error occured while fetching stock qoutes. Application is shutting down now.
+2017-02-21 23:15:23 [main] ERROR:: ErrorMessage:com.pubmatic.stockquote.exceptions.PubmaticBusinessException: Exception occured while communicating with yahoo server
+2017-02-21 23:15:23 [main] ERROR:: Error Description:java.util.concurrent.ExecutionException: com.pubmatic.stockquote.exceptions.PubmaticBusinessException: Exception occured while communicating with yahoo server
+2017-02-21 23:16:58 [main] INFO :: Stocks.txt file has been loaded successfully
+2017-02-21 23:16:59 [main] ERROR:: Error occured while fetching stock qoutes. Application is shutting down now.
+2017-02-21 23:16:59 [main] ERROR:: ErrorMessage:com.pubmatic.stockquote.exceptions.PubmaticBusinessException: Exception occured while communicating with yahoo server
+2017-02-21 23:16:59 [main] ERROR:: Error Description:java.util.concurrent.ExecutionException: com.pubmatic.stockquote.exceptions.PubmaticBusinessException: Exception occured while communicating with yahoo server
+2017-02-21 23:18:02 [main] INFO :: Stocks.txt file has been loaded successfully
+2017-02-21 23:18:39 [main] ERROR:: Error occured while fetching stock qoutes. Application is shutting down now.
+2017-02-21 23:18:39 [main] ERROR:: ErrorMessage:com.pubmatic.stockquote.exceptions.PubmaticBusinessException: Exception occured while communicating with yahoo server
+2017-02-21 23:18:39 [main] ERROR:: Error Description:java.util.concurrent.ExecutionException: com.pubmatic.stockquote.exceptions.PubmaticBusinessException: Exception occured while communicating with yahoo server
+2017-02-21 23:19:43 [main] INFO :: Stocks.txt file has been loaded successfully
+2017-02-21 23:20:20 [main] ERROR:: Error occured while fetching stock qoutes. Application is shutting down now.
+2017-02-21 23:20:20 [main] ERROR:: ErrorMessage:com.pubmatic.stockquote.exceptions.PubmaticBusinessException: Exception occured while communicating with yahoo server
+2017-02-21 23:20:20 [main] ERROR:: Error Description:java.util.concurrent.ExecutionException: com.pubmatic.stockquote.exceptions.PubmaticBusinessException: Exception occured while communicating with yahoo server
+2017-02-21 23:22:41 [main] INFO :: Stocks.txt file has been loaded successfully
+2017-02-21 23:23:08 [main] ERROR:: Error occured while fetching stock qoutes. Application is shutting down now.
+2017-02-21 23:23:08 [main] ERROR:: ErrorMessage:com.pubmatic.stockquote.exceptions.PubmaticBusinessException: com.pubmatic.stockquote.exceptions.PubmaticBusinessException: Exception occured while communicating with yahoo server
+2017-02-21 23:23:08 [main] ERROR:: Error Description:java.util.concurrent.ExecutionException: com.pubmatic.stockquote.exceptions.PubmaticBusinessException: com.pubmatic.stockquote.exceptions.PubmaticBusinessException: Exception occured while communicating with yahoo server
+2017-02-21 23:27:36 [main] INFO :: Stocks.txt file has been loaded successfully
+2017-02-21 23:27:37 [main] ERROR:: Internal application error
+java.util.concurrent.ExecutionException: com.pubmatic.stockquote.exceptions.PubmaticBusinessException
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:188)
+	at com.pubmatic.stockquote.processor.StockQuoteProcessor.process(StockQuoteProcessor.java:29)
+	at com.pubmatic.stockquote.PubmaticStockQuoteRunner.main(PubmaticStockQuoteRunner.java:30)
+Caused by: com.pubmatic.stockquote.exceptions.PubmaticBusinessException
+	at com.pubmatic.stockquote.processor.StockQuoteTaskExecutor.call(StockQuoteTaskExecutor.java:23)
+	at com.pubmatic.stockquote.processor.StockQuoteTaskExecutor.call(StockQuoteTaskExecutor.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.pubmatic.stockquote.exceptions.PubmaticBusinessException
+	at com.pubmatic.stockquote.service.impl.StockQuoteServiceImpl.getStockQuoteDetails(StockQuoteServiceImpl.java:46)
+	at com.pubmatic.stockquote.processor.StockQuoteTaskExecutor.call(StockQuoteTaskExecutor.java:21)
+	... 5 more
+Caused by: com.pubmatic.stockquote.http.client.exceptions.HttpCommunicationException
+	at com.pubmatic.stockquote.http.client.HttpClient.sendHttpGetRequest(HttpClient.java:36)
+	at com.pubmatic.stockquote.service.impl.StockQuoteServiceImpl.getStockQuoteDetails(StockQuoteServiceImpl.java:28)
+	... 6 more
+Caused by: javax.ws.rs.ProcessingException: java.net.UnknownHostException: query1.yahooapis.com: nodename nor servname provided, or not known
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:481)
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:255)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:684)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:681)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:228)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:444)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:681)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:411)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.get(JerseyInvocation.java:311)
+	at com.pubmatic.stockquote.http.client.HttpClient.sendHttpGetRequest(HttpClient.java:34)
+	... 7 more
+Caused by: java.net.UnknownHostException: query1.yahooapis.com: nodename nor servname provided, or not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$1.lookupAllHostAddr(InetAddress.java:901)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1295)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1248)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:111)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:435)
+	... 18 more
+2017-02-21 23:33:41 [main] INFO :: Stocks.txt file has been loaded successfully
+2017-02-21 23:33:42 [main] ERROR:: Error occured while fetching stock qoutes. Application is shutting down now
+com.pubmatic.stockquote.exceptions.PubmaticBusinessException: Failed while fetching stock details from server
+	at com.pubmatic.stockquote.processor.StockQuoteProcessor.process(StockQuoteProcessor.java:34)
+	at com.pubmatic.stockquote.PubmaticStockQuoteRunner.main(PubmaticStockQuoteRunner.java:28)
+Caused by: java.util.concurrent.ExecutionException: com.pubmatic.stockquote.exceptions.PubmaticBusinessException
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:188)
+	at com.pubmatic.stockquote.processor.StockQuoteProcessor.process(StockQuoteProcessor.java:30)
+	... 1 more
+Caused by: com.pubmatic.stockquote.exceptions.PubmaticBusinessException
+	at com.pubmatic.stockquote.processor.StockQuoteTaskExecutor.call(StockQuoteTaskExecutor.java:23)
+	at com.pubmatic.stockquote.processor.StockQuoteTaskExecutor.call(StockQuoteTaskExecutor.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.pubmatic.stockquote.exceptions.PubmaticBusinessException
+	at com.pubmatic.stockquote.service.impl.StockQuoteServiceImpl.getStockQuoteDetails(StockQuoteServiceImpl.java:46)
+	at com.pubmatic.stockquote.processor.StockQuoteTaskExecutor.call(StockQuoteTaskExecutor.java:21)
+	... 5 more
+Caused by: com.pubmatic.stockquote.http.client.exceptions.HttpCommunicationException
+	at com.pubmatic.stockquote.http.client.HttpClient.sendHttpGetRequest(HttpClient.java:36)
+	at com.pubmatic.stockquote.service.impl.StockQuoteServiceImpl.getStockQuoteDetails(StockQuoteServiceImpl.java:28)
+	... 6 more
+Caused by: javax.ws.rs.ProcessingException: java.net.UnknownHostException: query1.yahooapis.com: nodename nor servname provided, or not known
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:481)
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:255)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:684)
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:681)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:228)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:444)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:681)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:411)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.get(JerseyInvocation.java:311)
+	at com.pubmatic.stockquote.http.client.HttpClient.sendHttpGetRequest(HttpClient.java:34)
+	... 7 more
+Caused by: java.net.UnknownHostException: query1.yahooapis.com: nodename nor servname provided, or not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$1.lookupAllHostAddr(InetAddress.java:901)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1295)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1248)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:111)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:435)
+	... 18 more
+2017-02-21 23:35:29 [main] INFO :: Stocks.txt file has been loaded successfully
+2017-02-21 23:36:15 [main] INFO :: Stocks.txt file has been loaded successfully
+2017-02-21 23:37:57 [main] INFO :: Stocks.txt file has been loaded successfully
+2017-02-21 23:49:05 [main] INFO :: Stocks.txt file has been loaded successfully
+2017-02-21 23:51:22 [main] INFO :: Stocks.txt file has been loaded successfully
+2017-02-21 23:56:03 [main] INFO :: Stocks.txt file has been loaded successfully
+2017-02-22 00:00:07 [main] INFO :: Stocks.txt file has been loaded successfully
+2017-02-22 00:09:40 [main] INFO :: Processing... Stocks.txt
+2017-02-22 00:09:49 [main] INFO :: Stocks.txt has been processed
+2017-02-22 00:09:49 [main] INFO :: Stocks details has been saved in StocksQuotes.csv
+2017-02-22 00:09:49 [main] INFO :: 
